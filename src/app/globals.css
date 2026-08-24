@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* next-themes toggles a `.dark` class on <html>; this tells Tailwind's
+   `dark:` variant to key off that class instead of prefers-color-scheme. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,19 +12,42 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, sans-serif;
+}
+
+@layer base {
+  h1 {
+    @apply text-[32px] font-bold leading-10 tracking-tight sm:leading-14 text-zinc-800 sm:text-5xl  dark:text-zinc-100;
+  }
+}
+
+@layer components {
+  
+  /* Sits under an h1/h2, larger supporting copy */
+  .subtitle {
+    @apply text-[16px] leading-7 font-normal  text-zinc-600  dark:text-zinc-400;
+  }
+
+  .subheading {
+      @apply text-sm text-zinc-600 dark:text-zinc-400 leading-6 tracking-tight
+  }
+
+  .h2-var {
+      @apply text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100
+  }
+
+
+  .date {
+    @apply text-sm text-zinc-400 dark:text-zinc-500  
+  }
 }
