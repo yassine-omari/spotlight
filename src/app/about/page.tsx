@@ -9,6 +9,8 @@ import Mail from "@/components/icon/mail";
 
 export const metadata: Metadata = {
   title: "About",
+  description:
+    "I’m Spencer Sharp. I live in New York City, where I design the future.",
 };
 
 const iconClassName = "h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500";

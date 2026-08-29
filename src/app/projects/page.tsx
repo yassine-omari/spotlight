@@ -5,6 +5,7 @@ import LinkIcon from "@/components/icon/link";
 
 export const metadata: Metadata = {
   title: "Projects",
+  description: "Things I’ve made trying to put my dent in the universe.",
 };
 
 const projects = [

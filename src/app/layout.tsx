@@ -5,11 +5,33 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://spotlight-snowy.vercel.app"),
   title: {
-    default: "Spotlight",
-    template: "%s - Spotlight",
+    default: "Spencer Sharp - Software designer, founder, and amateur astronaut",
+    template: "%s - Spencer Sharp",
   },
-  description: "A personal website built with Next.js and Tailwind CSS.",
+  description:
+    "I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.",
+  icons: {
+    apple: "/avatar-icon.png",
+  },
+  openGraph: {
+    title: "Spencer Sharp - Software designer, founder, and amateur astronaut",
+    description:
+      "I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.",
+    url: "/",
+    siteName: "Spencer Sharp",
+    images: [{ url: "/avatar.webp", width: 512, height: 512 }],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Spencer Sharp - Software designer, founder, and amateur astronaut",
+    description:
+      "I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.",
+    images: ["/avatar.webp"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
